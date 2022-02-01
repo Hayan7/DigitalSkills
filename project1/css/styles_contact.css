@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(254, 254, 254);
+    font-size: 1em; /*base fontsize is 16px  en 100% 14px*/
+    font-weight: bolder;
+    font-family: Arial, Helvetica 'Lucida Sans Unicode', sans-serif;
+    line-height: 1.5;
+    margin: 0 auto;
+    width: 100%;
+    clear: both;
+}
+/*Header Home .. Contact*/
+a{
+    text-decoration: none;
+}
+li {
+    float: left;
+}
+h1 {
+    color: rgb(17, 16, 17);
+    margin-top: auto;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+.mainheader nav {
+    background-color: rgb(5, 5, 5);
+    
+    height: 3.5em;
+}
+.mainheader nav ul {
+    text-align: center;
+    list-style: none;
+    margin: 0;
+}
+.mainheader nav ul li {
+    display: inline-block;
+}
+.mainheader nav ul li:first-of-type {
+    margin-left: 10%;
+}
+.mainheader a:hover, .mainheader a:active {
+    color: white;
+    background-color: rgb(87, 85, 92);
+    text-shadow: none;
+}
+
+.mainheader a:link, .mainheader a:visited {
+    color: white;
+    padding: 1em 1em;
+    display: block;
+    text-align: center;
+}
+input, textarea, select {
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.wrapper {
+    border-style: groove;
+    width: 50%;
+    height: 700px;
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 10%;
+}
+label {
+        position: relative;
+        top: 15%;
+}

@@ -48,19 +48,10 @@ h1 {
     display: block;
     text-align: center;
 }
-/* .mainheader img{
-    width: 100%;
-    height: 100px;
-} */
-/* .mainheader{
-    width: 100%;
-} */
-/* All Menu's*/
 .mainContent::after {
     content: "";
     display: table;
     clear: both;
-    /* margin: 10px,0px,10px,0px; */
 }
 .mainContent {
     align-self: center;
@@ -79,11 +70,6 @@ div.images {
     border-color: rgb(243, 240, 240);
     border-;
 }
-/* .images img {
-    width: 100%;
-    height: auto;
-} */
-/*Footer*/
 footer {
     text-align: center;
     padding: 1em;
