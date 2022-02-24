@@ -121,12 +121,8 @@ listGroup.addEventListener('click',(e)=>{
         console.log(e.target.parentElement.parentElement)
         e.target.parentElement.parentElement.remove();
         let userData = JSON.parse(localStorage.getItem('userdata'))
-        userData.forEach(user => {
-            user.todoInput.remove()
-            user.DateOfTodo.remove()
-        })
-        //localStorage.removeItem(e.target)
-        //userData.remove()
+        userData[0].remove()
+        //localStorage.removeItem('userdata')
     }
 })
 
