@@ -118,10 +118,9 @@ listGroup.addEventListener('click',(e)=>{
         console.log(e.target.className)
         console.log(e.target)
         console.log(e.target.parentElement)
-        console.log(e.target.parentElement.parentElement)
-        e.target.parentElement.parentElement.remove();
+.        e.target.parentElement.parentElement.remove();
         let userData = JSON.parse(localStorage.getItem('userdata'))
-        userData[0].remove()
+        delete userData.todoInput
         //localStorage.removeItem('userdata')
     }
 })
