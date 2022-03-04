@@ -1,7 +1,7 @@
 const [book_name, book_author, book_releasedate, book_price] = document.querySelectorAll('input')
 const book_category = document.querySelector('#book_category')
 const [addBookBtn, removeBookBtn] = document.querySelectorAll('button')
-const listGroup = document.querySelector('.table-dark')
+const tablelist = document.querySelector('.table-dark')
 const g = t => document.createElement(t)
 function makeBookElement(obj) {
     let tr = g('tr')
@@ -39,8 +39,11 @@ function makeBookElement(obj) {
     
     return document.querySelector('tbody').append(tr)
 }
-document.addEventListener('DomContentLoaded', ()=>{
-
+document.addEventListener('DOMContentLoaded', ()=>{
+ let books = GetTodosFromWebStorages()
+ books.forEach(book => {
+     makeBookElement(book)
+ })
 })
 function addTodoToArray(obj) {
     let temp = GetTodosFromWebStorages();
@@ -58,14 +61,25 @@ function addTodoToArray(obj) {
     return temp;
   }
 
-  listGroup.addEventListener('click', (e) => {
+  tablelist.addEventListener('click', (e) => {
 
     if (e.target.className === 'fa fa-trash lead') {
-        e.target.parentElement.parentElement.remove();
-        DeleteTodoFromStorage(e.target.parentElement.parentElement.textContent.trim().split(" ")[0])
-  
+        e.target.parentElement.parentElement.parentElement.remove();
+        DeleteTodoFromStorage(e.target.parentElement.parentElement.parentElement.children[1].textContent.trim())
+            //console.log(e.target.parentElement.parentElement.parentElement.children[1].textContent.trim())
     }
   })
+
+  function DeleteTodoFromStorage(bookName) {
+    let todos = GetTodosFromWebStorages();
+    todos.forEach(function(todo,index){
+        console.log(todo)
+        if(todo.book_name.trim() === bookName.trim().toLowerCase()){
+            todos.splice(index,1)
+        }
+    })
+    localStorage.setItem('booklist',JSON.stringify(todos))
+  }
   //===================
 addBookBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -79,24 +93,20 @@ addBookBtn.addEventListener('click', (e) => {
     }
 
     addTodoToArray({
-        bookname: book_name.value,
-        bookauthor: book_author.value,
-        bookcategory: book_category.value,
-        bookreleasedate: book_releasedate,
-        bookprice: book_price
+        book_name: book_name.value,
+        book_author: book_author.value,
+        book_category: book_category.value,
+        book_releasedate: book_releasedate.value,
+        book_price: book_price.value
     })
     let makeBook = makeBookElement(obj)
 })
 //==========
 removeBookBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    //  console.log('hello')
-    if (listGroup.childElementCount != 0) {
-  
-        while (listGroup.firstChild) {
-            listGroup.removeChild(listGroup.lastChild)
-        }
-    } else {
-        // console.log('There is no todo!')
+    console.log(tablelist.children[1])
+    if (tablelist.children[1].childElementCount != 0) {
+        tablelist.children[1].remove()
     }
+    localStorage.clear()
   })
