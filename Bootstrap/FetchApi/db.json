@@ -1,0 +1,15 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Abdel",
+      "email": "abdel@gmail.com"
+    },
+    {
+      "name": "Abdeljalil El Hayani Marzoqi",
+      "email": "hayan7abdel@gmail.com",
+      "password": "159",
+      "id": 2
+    }
+  ]
+}

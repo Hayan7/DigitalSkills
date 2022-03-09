@@ -1,20 +1,30 @@
-//const [a,b,c,d,e,f,h,k,l] = document.querySelectorAll('.key')
+const [a,b,c,d,e,f,h,k,l] = document.querySelectorAll('.key')
 const alleNotes = document.querySelectorAll('.key')
-const datarequired = document.querySelectorAll('audio')
-
-function playNote(data){
-    datarequired.forEach(n => {
-        if(n.getAttribute('data-key') == data){
-            n.play()
-        }
-    })
+//const datarequired = document.querySelectorAll('audio')
+allNotes = () =>{
+    document.getElementById("data")
 }
-alleNotes.forEach(knop =>{
-    knop.addEventListener('click', (e) =>{
-        e.preventDefault()
-        playNote(knop.getAttribute('data-key'))
-    })
+window.addEventListener("load", allNotes)
+document.getElementById("hello").addEventListener("click", allNotes)
+a.addEventListener("click", (e)=>{
+    e.preventDefault()
+    console.log(allNotes)
 })
+// function playNote(data){
+//     datarequired.forEach(n => {
+//         if(n.getAttribute('data-key') == data){
+//             n.play()
+//         }
+//     })
+// }
+// alleNotes.forEach(knop =>{
+//     knop.addEventListener('click', (e) =>{
+//         e.preventDefault()
+//         let sum = new Function('a', 'b', 'return a+b')
+//         console.log(sum(4,5))
+//         playNote(knop.getAttribute('data-key'))
+//     })
+// })
     // data.addEventListener('click', (e)=>{
     //     e.preventDefault()
     //     console.log(data.getAttribute("data-key"))
